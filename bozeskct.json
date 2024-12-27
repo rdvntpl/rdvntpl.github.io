@@ -29,6 +29,7 @@
     {"Bozüyük": "18:00", "Eskişehir": "20:00"},
     {"Bozüyük": "18:30", "Eskişehir": "20:30"},
     {"Bozüyük": "19:00", "Eskişehir": "21:00"},
-    {"Bozüyük": "20:30", "Eskişehir": "22:00"},
-    {"Bozüyük": "21:30", "Eskişehir": "23:00"}
+    {"Bozüyük": "19:30", "Eskişehir": "21:30"},
+    {"Bozüyük": "20:00", "Eskişehir": "22:00"},
+    {"Bozüyük": "21:00", "Eskişehir": "23:00"}
   ]
