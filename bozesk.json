@@ -1,5 +1,5 @@
 [
-    {"Bozüyük": "3:30", "Eskişehir": "1:00"},
+    {"Bozüyük": "5:20", "Eskişehir": "7:00"},
     {"Bozüyük": "6:00", "Eskişehir": "7:20"},
     {"Bozüyük": "6:30", "Eskişehir": "7:40"},
     {"Bozüyük": "6:55", "Eskişehir": "8:05"},
@@ -30,7 +30,7 @@
     {"Bozüyük": "17:40", "Eskişehir": "19:30"},
     {"Bozüyük": "18:00", "Eskişehir": "20:00"},
     {"Bozüyük": "18:30", "Eskişehir": "20:30"},
-    {"Bozüyük": "19:30", "Eskişehir": "21:00"},
-    {"Bozüyük": "20:30", "Eskişehir": "22:00"},
-    {"Bozüyük": "21:30", "Eskişehir": "23:00"}
+    {"Bozüyük": "19:00", "Eskişehir": "21:00"},
+    {"Bozüyük": "20:00", "Eskişehir": "22:00"},
+    {"Bozüyük": "21:00", "Eskişehir": "23:00"}
   ]
