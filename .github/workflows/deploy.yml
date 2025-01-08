@@ -14,7 +14,7 @@
          - name: Checkout your repository
            uses: actions/checkout@v4
          - name: Install, build, and upload your site
-           uses: withastro/action@v3
+           uses: withastro/action@v2
      deploy:
        needs: build
        runs-on: ubuntu-latest
@@ -24,4 +24,4 @@
        steps:
          - name: Deploy to GitHub Pages
            id: deployment
-           uses: actions/deploy-pages@v3
+           uses: actions/deploy-pages@v4
