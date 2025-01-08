@@ -2,7 +2,7 @@
 # Start of Selection
 title: 'Real-Time Bus Schedule App'
 description: Bozsaat is a mobile app designed to enhance time management and productivity through innovative features and user-friendly design.
-publishDate: 'Jan 02 2024'
+publishDate: 'Jan 11 2024'
 seo:
   image:
     src: '/bozsaat.webp'
