@@ -14,8 +14,7 @@
          - name: Checkout your repository
            uses: actions/checkout@v4
          - name: Install, build, and upload your site
-           uses: withastro/action@v3
-              plugins: 
+           uses: withastro/action@v3 
      deploy:
        needs: build
        runs-on: ubuntu-latest
