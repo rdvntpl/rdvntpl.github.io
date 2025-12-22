@@ -102,7 +102,8 @@ const siteConfig: SiteConfig = {
             }
         ]
     },
-    // Optional: Add your Google Analytics ID here
+    // Optional: Add your Google Analytics 4 (GA4) Measurement ID here
+    // Format: 'G-XXXXXXXXXX' (must start with 'G-')
     // googleAnalyticsId: 'G-XXXXXXXXXX',
 };
 

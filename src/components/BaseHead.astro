@@ -34,6 +34,19 @@ function formatCanonicalURL(url: string | URL) {
     // otherwise, canonical URL always has a trailing slash
     return path.replace(/\/?$/, hasQueryParams ? '' : '/');
 }
+
+/**
+ * Validate Google Analytics ID format (must be G-XXXXXXXXXX)
+ * Returns the ID if valid, otherwise returns null to prevent XSS
+ */
+function validateGAId(id: string | undefined): string | null {
+    if (!id) return null;
+    // GA4 IDs must match the pattern: G- followed by alphanumeric characters
+    const gaIdPattern = /^G-[A-Z0-9]+$/;
+    return gaIdPattern.test(id) ? id : null;
+}
+
+const validGAId = validateGAId(siteConfig.googleAnalyticsId);
 ---
 
 <!-- High Priority Global Metadata -->
@@ -72,10 +85,10 @@ function formatCanonicalURL(url: string | URL) {
 {resolvedImage?.alt && <meta name="twitter:image:alt" content={resolvedImage?.alt} />}
 
 <!-- Google Analytics -->
-{siteConfig.googleAnalyticsId && (
+{validGAId && (
     <>
-        <script async src={`https://www.googletagmanager.com/gtag/js?id=${siteConfig.googleAnalyticsId}`}></script>
-        <script is:inline define:vars={{ gaId: siteConfig.googleAnalyticsId }}>
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${validGAId}`}></script>
+        <script is:inline define:vars={{ gaId: validGAId }}>
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
