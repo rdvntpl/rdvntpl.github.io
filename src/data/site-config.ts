@@ -35,6 +35,7 @@ export type SiteConfig = {
     subscribe?: Subscribe;
     postsPerPage?: number;
     projectsPerPage?: number;
+    googleAnalyticsId?: string;
 };
 
 const siteConfig: SiteConfig = {
@@ -101,6 +102,8 @@ const siteConfig: SiteConfig = {
             }
         ]
     },
-     };
+    // Optional: Add your Google Analytics ID here
+    // googleAnalyticsId: 'G-XXXXXXXXXX',
+};
 
 export default siteConfig;
