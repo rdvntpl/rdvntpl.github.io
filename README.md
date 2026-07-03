@@ -40,7 +40,7 @@ npm run preview
 
 ## Core configuration
 
-Main site settings live in `/home/runner/work/rdvntpl.github.io/rdvntpl.github.io/src/data/site-config.ts`.
+Main site settings live in `./src/data/site-config.ts`.
 Use this file to update:
 
 - site title and description
@@ -51,11 +51,11 @@ Use this file to update:
 
 ## Content model
 
-Content collections are defined in `/home/runner/work/rdvntpl.github.io/rdvntpl.github.io/src/content.config.ts`.
+Content collections are defined in `./src/content.config.ts`.
 
 ### Blog entries
 
-Files live in `/home/runner/work/rdvntpl.github.io/rdvntpl.github.io/src/content/blog/`.
+Files live in `./src/content/blog/`.
 Supported frontmatter fields include:
 
 - `title`
@@ -71,7 +71,7 @@ Supported frontmatter fields include:
 
 ### Project entries
 
-Files live in `/home/runner/work/rdvntpl.github.io/rdvntpl.github.io/src/content/projects/`.
+Files live in `./src/content/projects/`.
 Supported frontmatter fields include:
 
 - `title`
@@ -87,7 +87,7 @@ Supported frontmatter fields include:
 
 ### Static pages
 
-Files live in `/home/runner/work/rdvntpl.github.io/rdvntpl.github.io/src/content/pages/`.
+Files live in `./src/content/pages/`.
 Supported frontmatter fields include:
 
 - `title`
@@ -97,7 +97,7 @@ Supported frontmatter fields include:
 
 ## Analytics
 
-To enable Google Analytics 4 tracking, add your measurement ID in `/home/runner/work/rdvntpl.github.io/rdvntpl.github.io/src/data/site-config.ts`:
+To enable Google Analytics 4 tracking, add your measurement ID in `./src/data/site-config.ts`:
 
 ```ts
 googleAnalyticsId: 'G-XXXXXXXXXX'

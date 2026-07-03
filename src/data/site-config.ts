@@ -47,6 +47,7 @@ export type SiteConfig = {
     contactEmail?: string;
     keywords?: string[];
     socialHandle?: string;
+    themeColor?: string;
     image?: Image;
     headerNavLinks?: Link[];
     footerNavLinks?: Link[];
@@ -68,6 +69,7 @@ const siteConfig: SiteConfig = {
     contactEmail: 'rdvn.tpl@gmail.com',
     keywords: ['Rıdvan Topal', 'Flutter developer', 'mobile developer', 'portfolio', 'Astro blog', 'web projects'],
     socialHandle: '@rdvntpl',
+    themeColor: '#f8f5ef',
     image: {
         src: '/dante-preview.jpg',
         alt: 'Preview of the Rıdvan Topal portfolio site'

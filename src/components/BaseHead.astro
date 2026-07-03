@@ -81,7 +81,7 @@ const validGAId = validateGAId(siteConfig.googleAnalyticsId);
 <link rel="sitemap" href="/sitemap-index.xml" />
 <link rel="alternate" type="application/rss+xml" href="/rss.xml" title="RSS" />
 <meta name="author" content={siteConfig.author || siteConfig.title} />
-<meta name="theme-color" content="#f8f5ef" />
+<meta name="theme-color" content={siteConfig.themeColor || '#f8f5ef'} />
 
 <!-- Page Metadata -->
 <link rel="canonical" href={formatCanonicalURL(canonicalURL)} />
