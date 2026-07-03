@@ -70,7 +70,7 @@ const siteConfig: SiteConfig = {
     socialHandle: '@rdvntpl',
     image: {
         src: '/dante-preview.jpg',
-        alt: 'Preview of ridvan.topal.dev portfolio site'
+        alt: 'Preview of the Rıdvan Topal portfolio site'
     },
     headerNavLinks: [
         {
