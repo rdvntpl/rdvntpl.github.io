@@ -8,24 +8,42 @@ const hero = siteConfig.hero;
 
 {
     (hero?.title || hero?.image?.src || hero?.text || (hero?.actions && hero.actions.length > 0)) && (
-        <section class="w-full flex flex-col gap-8 mb-16 sm:mb-24">
-            {hero.eyebrow && <p class="text-xs font-medium tracking-[0.2em] uppercase text-main/70">{hero.eyebrow}</p>}
-            {hero.title && <h1 class="max-w-4xl text-3xl leading-tight font-serif font-medium sm:text-5xl sm:leading-tight">{hero.title}</h1>}
+        <section class="hero-3d mb-16 sm:mb-24">
+            <div class="hero-3d__glow hero-3d__glow--one" aria-hidden="true"></div>
+            <div class="hero-3d__glow hero-3d__glow--two" aria-hidden="true"></div>
+            <div class="hero-3d__copy">
+                {hero.eyebrow && <p class="text-xs font-medium tracking-[0.2em] uppercase text-main/70">{hero.eyebrow}</p>}
+                {hero.title && <h1 class="max-w-4xl text-3xl leading-tight font-serif font-medium sm:text-5xl sm:leading-tight">{hero.title}</h1>}
+                <div class="hero-3d__badge" aria-hidden="true">
+                    <span>3D Motion</span>
+                    <span>Astro Portfolio</span>
+                </div>
+                {hero.text && <div class="hero-3d__text max-w-3xl prose prose-dante sm:prose-lg" set:html={marked.parse(hero.text)} />}
+                {hero.actions && hero.actions.length > 0 && (
+                    <div class="hero-3d__actions flex flex-wrap gap-4">
+                        {hero.actions.map((action) => (
+                            <Button
+                                class="home-3d-button"
+                                href={action.href}
+                                target={action.external ? '_blank' : undefined}
+                                rel={action.external ? 'noreferrer noopener' : undefined}
+                            >
+                                {action.text}
+                            </Button>
+                        ))}
+                    </div>
+                )}
+            </div>
             {hero.image?.src && (
-                <figure>
-                    <img class="w-full" src={hero.image.src} loading="lazy" decoding="async" alt={hero.image.alt || ''} />
+                <figure class="hero-3d__media">
+                    <div class="hero-3d__image-shell">
+                        <div class="hero-3d__image-plane hero-3d__image-plane--back" aria-hidden="true"></div>
+                        <div class="hero-3d__image-plane hero-3d__image-plane--front">
+                            <img class="w-full" src={hero.image.src} loading="lazy" decoding="async" alt={hero.image.alt || ''} />
+                        </div>
+                    </div>
                     {hero.image.caption && <figcaption class="mt-1.5 text-xs sm:text-sm">{hero.image.caption}</figcaption>}
                 </figure>
-            )}
-            {hero.text && <div class="max-w-3xl prose prose-dante sm:prose-lg" set:html={marked.parse(hero.text)} />}
-            {hero.actions && hero.actions.length > 0 && (
-                <div class="flex flex-wrap gap-4">
-                    {hero.actions.map((action) => (
-                        <Button href={action.href} target={action.external ? '_blank' : undefined} rel={action.external ? 'noreferrer noopener' : undefined}>
-                            {action.text}
-                        </Button>
-                    ))}
-                </div>
             )}
         </section>
     )
