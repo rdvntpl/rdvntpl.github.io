@@ -5,7 +5,7 @@ import ArrowRight from '../icons/ArrowRight.astro';
 type Props = { project: CollectionEntry<'projects'>; class?: string; headingLevel?: 'h2' | 'h3' };
 
 const { project, class: className, headingLevel = 'h2' } = Astro.props;
-const { title, description } = project.data;
+const { title, description, summary, status, technologies = [] } = project.data;
 const TitleTag = headingLevel;
 ---
 
@@ -16,7 +16,15 @@ const TitleTag = headingLevel;
         >
             {title}
         </TitleTag>
-        {description && <div class="mt-1 text-sm leading-normal">{description}</div>}
+        {(summary || description) && <div class="mt-1 text-sm leading-normal">{summary || description}</div>}
+        {(status || technologies.length > 0) && (
+            <div class="mt-3 flex flex-wrap gap-2">
+                {status && <span class="rounded-full border border-dashed border-main px-2.5 py-1 text-xs uppercase tracking-[0.18em]">{status}</span>}
+                {technologies.slice(0, 4).map((technology) => (
+                    <span class="rounded-full border border-dashed border-main px-2.5 py-1 text-xs">{technology}</span>
+                ))}
+            </div>
+        )}
     </div>
     <div class="hidden font-serif italic opacity-0 transition group-hover:opacity-100 sm:inline-flex sm:gap-1 sm:items-center sm:shrink-0">
         View Project <ArrowRight class="fill-current w-4 h-4" />

@@ -1,47 +1,68 @@
 ---
-title: 'Dental Health Service Web Application'
-description: A comprehensive dental health service web application built with Node.js, Express.js, and MongoDB, deployed using Docker.
+title: Dental Health Service Web Application
+description: A web platform for presenting dental services and supporting staff and patient information workflows.
+summary: This project combined a service-oriented frontend with a maintainable backend stack to improve how dental information is organized and delivered.
 publishDate: 'Jan 08 2024'
 isFeatured: true
+status: archived
+technologies:
+  - Node.js
+  - Express.js
+  - MongoDB
+  - Docker
+  - Bootstrap
+links:
+  - label: View source on GitHub
+    href: https://github.com/rdvntpl/ApolloniaDental
+    external: true
+    type: primary
+cta:
+  title: Looking for web application support?
+  text: I also build supporting web experiences around products, services, and internal workflows where structure and clarity matter.
+  action:
+    label: Start a conversation
+    href: /contact
 seo:
+  description: A dental services web application built with Node.js, Express.js, MongoDB, and Docker to improve service delivery and content organization.
+  keywords:
+    - Node.js project
+    - Express web app
+    - dental service platform
   image:
-    src: '/apollonia-dental-preview.png'
+    src: /apollonia-dental-preview.png
     alt: Apollonia Dental project preview
 ---
 
 ![Project preview](/apollonia-dental-preview.png)
 
-**Project Overview:**
-Apollonia Dental is a web application designed to provide comprehensive dental health services. Built with Node.js, Express.js, and MongoDB, this application leverages Docker for seamless deployment and scalability. The platform aims to enhance patient experience and streamline dental service management.
+## Project Overview
+
+Apollonia Dental is a web application designed to support dental service presentation and operational information flows. The project combines a structured backend with a straightforward web interface so visitors and staff can access relevant service information more easily.
 
 ## Objectives
 
-1. Develop a user-friendly interface for patients to look up staff and access dental health information.
-2. Implement a secure backend to manage dentists.
-3. Ensure the application is scalable and maintainable through the use of Docker.
+1. Create a clear and approachable interface for dental service content.
+2. Support staff and patient information workflows through a maintainable backend.
+3. Use Docker to make deployment and environment management more predictable.
 
 ## Features
 
-1. **Doctor and Department Management:**
+1. **Service and staff information management**
+   - The application supports presenting operational data in a more structured way for dental teams and visitors.
 
-   - Admin dashboard for dental staff to view and manage patient information.
+2. **Responsive design**
+   - The interface is designed to work cleanly across desktop and mobile screen sizes.
 
-2. **Responsive Design:**
-
-   - The application is designed to be fully responsive, ensuring a seamless experience on both desktop and mobile devices.
-
-3. **Docker Deployment:**
-   - The application is containerized using Docker, allowing for easy deployment and scaling in various environments.
+3. **Containerized deployment**
+   - Docker is used to simplify setup, consistency, and deployment across environments.
 
 ## Technology Stack
 
-- **Frontend:** EJS and Bootstrap for a responsive user interface.
-- **Backend:** Node.js and Express.js for server-side logic and API integration.
-- **Database:** MongoDB for efficient storage and retrieval of data.
-- **Containerization:** Docker for deployment and environment management.
+- **Frontend:** EJS and Bootstrap
+- **Backend:** Node.js and Express.js
+- **Database:** MongoDB
+- **Infrastructure:** Docker
 
 ## Outcome
 
-The Apollonia Dental web application successfully enhances the patient experience by providing a streamlined platform for managing dental health services. The use of modern technologies ensures that the application is both efficient and secure.
-
-**GitHub Repository:** [Apollonia Dental](https://github.com/rdvntpl/ApolloniaDental)
+The project demonstrated a practical full-stack workflow for service businesses that need a reliable web presence and clearer information delivery. It also provided a solid foundation for iterating on backend structure and deployment practices.

@@ -3,16 +3,61 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Button from '../components/Button.astro';
 import Hero from '../components/Hero.astro';
+import PostPreview from '../components/PostPreview.astro';
 import ProjectPreview from '../components/ProjectPreview.astro';
 import siteConfig from '../data/site-config';
 import { sortItemsByDateDesc } from '../utils/data-utils';
 
 const projects = (await getCollection('projects')).sort(sortItemsByDateDesc);
+const posts = (await getCollection('blog')).sort(sortItemsByDateDesc);
 const featuredProjects = projects.filter(({ data }) => data.isFeatured);
+const featuredPosts = posts.filter(({ data }) => data.isFeatured).slice(0, 3);
+const structuredData = [
+    {
+        '@context': 'https://schema.org',
+        '@type': 'Person',
+        name: siteConfig.author || siteConfig.title,
+        jobTitle: siteConfig.subtitle,
+        description: siteConfig.description,
+        url: Astro.site?.toString(),
+        image: siteConfig.image?.src ? new URL(siteConfig.image.src, Astro.site).toString() : undefined,
+        email: siteConfig.contactEmail,
+        sameAs: (siteConfig.socialLinks || []).map((link) => link.href)
+    },
+    {
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        name: siteConfig.title,
+        description: siteConfig.description,
+        url: Astro.site?.toString()
+    }
+].filter(Boolean);
 ---
 
-<BaseLayout description={siteConfig.description} image={siteConfig.image}>
+<BaseLayout description={siteConfig.description} image={siteConfig.image} structuredData={structuredData}>
     <Hero />
+    <section class="mb-16 sm:mb-24">
+        <div class="grid gap-6 md:grid-cols-3">
+            <div class="border border-dashed border-main p-6">
+                <h2 class="text-lg font-serif font-medium">Mobile product development</h2>
+                <p class="mt-3 text-sm leading-relaxed">
+                    Flutter-first delivery for Android and cross-platform apps with a focus on usability, speed, and maintainable architecture.
+                </p>
+            </div>
+            <div class="border border-dashed border-main p-6">
+                <h2 class="text-lg font-serif font-medium">Clear technical context</h2>
+                <p class="mt-3 text-sm leading-relaxed">
+                    Each project highlights goals, stack choices, and outcomes so visitors can quickly understand what was built and why it matters.
+                </p>
+            </div>
+            <div class="border border-dashed border-main p-6">
+                <h2 class="text-lg font-serif font-medium">Open to collaboration</h2>
+                <p class="mt-3 text-sm leading-relaxed">
+                    Available for product work, technical implementation, and conversations about shipping useful software with better UX.
+                </p>
+            </div>
+        </div>
+    </section>
     {
         featuredProjects?.length > 0 && (
             <div class="mb-16 sm:mb-24">
@@ -26,4 +71,28 @@ const featuredProjects = projects.filter(({ data }) => data.isFeatured);
             </div>
         )
     }
+    {
+        featuredPosts?.length > 0 && (
+            <div class="mb-16 sm:mb-24">
+                <h2 class="mb-12 text-xl font-serif italic sm:mb-16 sm:text-2xl">Recent Writing</h2>
+                {featuredPosts.map((post) => (
+                    <PostPreview post={post} class="mb-10 sm:mb-12" headingLevel="h3" />
+                ))}
+                <div class="mt-12 sm:mt-16">
+                    <Button href="/blog">Browse All Posts</Button>
+                </div>
+            </div>
+        )
+    }
+    <section class="mb-16 border border-dashed border-main px-8 py-10 sm:mb-24 sm:px-10 sm:py-12">
+        <h2 class="text-2xl leading-tight font-serif font-medium sm:text-3xl">Looking for a developer who can turn product ideas into polished experiences?</h2>
+        <p class="mt-4 max-w-2xl text-sm leading-relaxed sm:text-base">
+            I enjoy working on mobile products, developer-friendly systems, and web experiences that communicate clearly. If you have an app, internal
+            tool, or product idea to shape, let&apos;s talk.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-4">
+            <Button href="/contact">Start a Conversation</Button>
+            <Button href="/about">Learn More About Me</Button>
+        </div>
+    </section>
 </BaseLayout>

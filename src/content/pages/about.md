@@ -1,43 +1,54 @@
 ---
 title: About
+summary: Learn more about Rıdvan Topal, the kind of products he likes to build, and the principles behind his work.
+cta:
+  title: Have a product idea or technical challenge?
+  text: I'm open to collaborations around Flutter apps, internal tools, and practical digital products that need thoughtful UX.
+  action:
+    label: Get in touch
+    href: /contact
 seo:
   title: About Me
-  description: Learn more about Rıdvan Topal and embark on a journey of inspiration and shared experiences.
+  description: Learn more about Rıdvan Topal, a Flutter developer focused on practical products, strong UX, and maintainable implementation.
+  keywords:
+    - Rıdvan Topal
+    - Flutter developer
+    - mobile engineer
   image:
-    src: '/about.jpeg'
-    alt: A person sitting at a desk in front of a computer
+    src: /about.jpeg
+    alt: Rıdvan Topal at a desk
 ---
 
-![Alt text for image](/about.jpeg)
+![Rıdvan Topal at a desk](/about.jpeg)
 
-## Rıdvan Topal - Flutter Developer
+## Rıdvan Topal — Flutter Developer
 
-**Greetings!**
+I build products that feel clear, fast, and easy to trust. My main focus is **Flutter development**, but I also enjoy shaping the surrounding product experience — from information architecture and frontend decisions to the small UX details that make software feel polished.
 
-I'm Rıdvan Topal, a passionate Flutter developer specializing in Android applications. With a keen eye for design and a love for crafting seamless digital experiences, I bring a unique blend of creativity and technical expertise to the world of mobile development.
+## What I work on
 
-## Skills and Expertise
+- **Mobile applications** for Android and cross-platform delivery
+- **Product-focused interfaces** that balance usability with performance
+- **Internal and utility tools** that solve real operational problems
+- **Content-rich websites** that explain products and decisions clearly
 
-I specialize in Flutter for cross-platform mobile app development, utilizing the latest technologies to build responsive and user-friendly applications. My proficiency includes **Dart**, **Node.js**, **Express.js**, **MongoDB**, **Docker**, and **Git** for version control.
+## How I approach projects
 
-## Innovation and Problem-Solving
+I like to understand the problem first, simplify where possible, and then build with enough structure to support long-term iteration. My workflow usually combines:
 
-I thrive on solving complex problems and transforming ideas into functional, elegant applications. Whether it's optimizing performance, implementing new features, or troubleshooting issues, I approach each challenge with enthusiasm and a commitment to delivering high-quality solutions.
+1. product thinking and user empathy,
+2. pragmatic technical decisions,
+3. attention to visual quality,
+4. and a strong preference for maintainable solutions over unnecessary complexity.
 
-## Global Perspective, Local Impact
+## Tools and technologies
 
-Living in Bilecik, Turkey has influenced my appreciation for nature and culture, shaping my approach to development. I understand the importance of creating digital solutions that resonate with local audiences while maintaining a global perspective.
+My day-to-day work is centered on **Flutter** and **Dart**, with supporting experience across **Node.js**, **Express.js**, **MongoDB**, **Docker**, and **Git**. I enjoy learning by shipping, documenting the reasoning behind choices, and refining the product after real usage.
 
-## Continuous Learning
+## Based in Bilecik, building for broader audiences
 
-The dynamic nature of the tech industry inspires me to stay up-to-date with the latest trends and advancements. I'm always eager to expand my skill set and embrace emerging technologies that enhance the functionality and aesthetics of the applications I create.
+Living in Bilecik, Turkey gives me a grounded perspective on building useful software for real people. I care about solutions that are locally relevant, globally understandable, and strong enough to scale with product growth.
 
-## Collaboration and Communication
+## Let’s build something useful
 
-I believe in the power of collaboration and effective communication. Whether working with clients, designers, or fellow developers, I value clear communication to ensure the success of every project.
-
-## Get in Touch
-
-Are you looking to elevate your mobile presence or bring your digital ideas to life? I'd love to hear from you! Feel free to reach out for collaboration, consultation, or just a friendly chat about all things mobile development.
-
-_Let's build something amazing together!_
+If you're working on a mobile product, internal platform, or digital experience that needs better execution and clearer product thinking, I'd be happy to talk.

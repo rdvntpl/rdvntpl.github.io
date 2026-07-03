@@ -30,8 +30,8 @@ const navLinks = siteConfig.footerNavLinks || [];
                         <a
                             class="inline-flex items-center justify-center text-sm hover:underline hover:underline-offset-2"
                             href={link.href}
-                            target="_blank"
-                            rel="noopener noreferer"
+                            target={link.external ? '_blank' : undefined}
+                            rel={link.external ? 'noopener noreferrer' : undefined}
                         >
                             {link.text}
                         </a>
@@ -39,8 +39,11 @@ const navLinks = siteConfig.footerNavLinks || [];
                 </div>
             )
         }
-        <p class="text-sm">
-            &copy; {new Date().getFullYear()}&nbsp;<a class="hover:underline hover:underline-offset-2" href="/">{siteConfig.title}</a>. All rights reserved.
-        </p>
+        <div class="text-sm leading-relaxed">
+            <p>
+                &copy; {new Date().getFullYear()}&nbsp;<a class="hover:underline hover:underline-offset-2" href="/">{siteConfig.title}</a>. {siteConfig.subtitle}
+            </p>
+            {siteConfig.location && <p class="text-main/70">{siteConfig.location}</p>}
+        </div>
     </div>
 </footer>

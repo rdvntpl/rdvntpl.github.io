@@ -1,0 +1,40 @@
+---
+import { type CollectionEntry, getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostPreview from '../../components/PostPreview.astro';
+import { getAllTags, getPostsByTag, sortItemsByDateDesc } from '../../utils/data-utils';
+
+export async function getStaticPaths() {
+    const posts = (await getCollection('blog')).sort(sortItemsByDateDesc);
+    const tags = getAllTags(posts);
+
+    return tags.map((tag) => ({
+        params: { id: tag.id },
+        props: {
+            tagName: tag.name,
+            posts: getPostsByTag(posts, tag.id)
+        }
+    }));
+}
+
+type Props = {
+    tagName: string;
+    posts: CollectionEntry<'blog'>[];
+};
+
+const { tagName, posts } = Astro.props;
+---
+
+<BaseLayout
+    title={`#${tagName}`}
+    description={`Posts tagged ${tagName} on the Rıdvan Topal blog.`}
+    image={{ src: '/dante-preview.jpg', alt: `Posts tagged ${tagName}` }}
+    showHeader={false}
+>
+    <section class="mb-16 sm:mb-24">
+        <a class="text-sm hover:underline" href="/tags/">← All tags</a>
+        <h1 class="mt-4 mb-4 text-3xl leading-tight font-serif font-medium sm:text-5xl sm:leading-tight">#{tagName}</h1>
+        <p class="mb-10 text-sm leading-relaxed sm:text-base">{posts.length} post{posts.length === 1 ? '' : 's'} in this topic.</p>
+        {posts.map((post) => <PostPreview post={post} class="mb-10 sm:mb-12" />)}
+    </section>
+</BaseLayout>

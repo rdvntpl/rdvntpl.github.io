@@ -1,28 +1,14 @@
-# Hi! I'm Rıdvan Topal
+# Rıdvan Topal Portfolio
 
 https://rdvntpl.github.io/
 
+An Astro 5 + Tailwind portfolio site for showcasing projects, writing, and professional context.
+
 ## Features
 
-This portfolio website is built with Astro and includes:
+- Shared SEO and social metadata through a central layout and head component
+- Collection-driven pages for blog posts, projects, and static content pages
+- Homepage sections for featured work and recent writing
+- Tag discovery pages for blog topics
+- Optional Google Analytics 4 support
 
-- 📊 **Web Analytics Support**: Google Analytics 4 (GA4) integration for tracking website visitors and understanding user behavior
-- 🎨 Modern, responsive design
-- 📝 Blog and project showcases
-- 🌙 Dark mode support
-
-## Configuration
-
-### Setting up Google Analytics
-
-To enable web analytics tracking:
-
-1. Create a Google Analytics 4 property at [analytics.google.com](https://analytics.google.com/)
-2. Get your Measurement ID (format: `G-XXXXXXXXXX`)
-3. Open `src/data/site-config.ts`
-4. Uncomment and add your Measurement ID:
-   ```typescript
-   googleAnalyticsId: 'G-XXXXXXXXXX',
-   ```
-
-Once configured, the analytics tracking code will be automatically included on all pages.

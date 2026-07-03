@@ -1,0 +1,29 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getAllTags, sortItemsByDateDesc } from '../../utils/data-utils';
+
+const posts = (await getCollection('blog')).sort(sortItemsByDateDesc);
+const tags = getAllTags(posts);
+---
+
+<BaseLayout
+    title="Tags"
+    description="Browse writing by topic, technology, and recurring themes from the blog."
+    image={{ src: '/dante-preview.jpg', alt: 'Browse blog tags' }}
+    showHeader={false}
+>
+    <section class="mb-16 sm:mb-24">
+        <h1 class="mb-4 text-3xl leading-tight font-serif font-medium sm:text-5xl sm:leading-tight">Browse by Tag</h1>
+        <p class="max-w-2xl text-sm leading-relaxed sm:text-base">
+            Explore posts by topic to quickly find notes about tools, workflows, and product decisions.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+            {tags.map((tag) => (
+                <a class="rounded-full border border-dashed border-main px-4 py-2 text-sm hover:bg-muted" href={`/tags/${tag.id}/`}>
+                    #{tag.name}
+                </a>
+            ))}
+        </div>
+    </section>
+</BaseLayout>

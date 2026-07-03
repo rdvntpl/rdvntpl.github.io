@@ -5,7 +5,7 @@ import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
-    site: 'https://rdvntpl.github.io/rdvntpl.github.io',
+    site: 'https://rdvntpl.github.io',
     integrations: [
         mdx(),
         sitemap(),
