@@ -189,7 +189,7 @@
     .home-3d-link:focus-visible,
     .home-3d-button:hover,
     .home-3d-button:focus-visible {
-        transform: translate3d(0, -8px, 0) rotateX(8deg) rotateY(-8deg);
+        transform: translate3d(0, -6px, 0) rotateX(4deg) rotateY(-4deg);
         box-shadow:
             0 34px 56px -34px rgb(0 0 0 / 0.68),
             0 24px 28px -24px rgb(0 0 0 / 0.4);
@@ -217,13 +217,30 @@
     @media (prefers-reduced-motion: reduce) {
         .hero-3d__copy,
         .hero-3d__image-shell,
-        .hero-3d__glow,
+        .hero-3d__glow {
+            animation: none;
+            transform: none;
+        }
+
         .home-3d-card,
         .home-3d-link,
         .home-3d-button {
-            animation: none;
-            transition: none;
             transform: none;
+            transition:
+                box-shadow 160ms ease,
+                background-color 160ms ease;
+        }
+
+        .home-3d-card:hover,
+        .home-3d-card:focus-within,
+        .home-3d-link:hover,
+        .home-3d-link:focus-visible,
+        .home-3d-button:hover,
+        .home-3d-button:focus-visible {
+            transform: none;
+            box-shadow:
+                0 26px 44px -34px rgb(0 0 0 / 0.58),
+                0 18px 22px -22px rgb(0 0 0 / 0.34);
         }
     }
 }
