@@ -203,7 +203,6 @@
         box-shadow:
             0 16px 24px -18px rgb(0 0 0 / 0.45),
             inset 0 1px 0 rgb(255 255 255 / 0.35);
-        will-change: transform;
     }
 
     @media (min-width: 768px) {
@@ -219,13 +218,13 @@
         .hero-3d__image-shell,
         .hero-3d__glow {
             animation: none;
-            transform: none;
+            transform: translate3d(0, 0, 0);
         }
 
         .home-3d-card,
         .home-3d-link,
         .home-3d-button {
-            transform: none;
+            transform: translate3d(0, 0, 0);
             transition:
                 box-shadow 160ms ease,
                 background-color 160ms ease;
@@ -237,7 +236,7 @@
         .home-3d-link:focus-visible,
         .home-3d-button:hover,
         .home-3d-button:focus-visible {
-            transform: none;
+            transform: translate3d(0, 0, 0);
             box-shadow:
                 0 26px 44px -34px rgb(0 0 0 / 0.58),
                 0 18px 22px -22px rgb(0 0 0 / 0.34);
