@@ -14,10 +14,6 @@ const hero = siteConfig.hero;
             <div class="hero-3d__copy">
                 {hero.eyebrow && <p class="text-xs font-medium tracking-[0.2em] uppercase text-main/70">{hero.eyebrow}</p>}
                 {hero.title && <h1 class="max-w-4xl text-3xl leading-tight font-serif font-medium sm:text-5xl sm:leading-tight">{hero.title}</h1>}
-                <div class="hero-3d__badge" aria-hidden="true">
-                    <span>3D Motion</span>
-                    <span>Astro Portfolio</span>
-                </div>
                 {hero.text && <div class="hero-3d__text max-w-3xl prose prose-dante sm:prose-lg" set:html={marked.parse(hero.text)} />}
                 {hero.actions && hero.actions.length > 0 && (
                     <div class="hero-3d__actions flex flex-wrap gap-4">

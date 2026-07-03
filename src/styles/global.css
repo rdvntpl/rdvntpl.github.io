@@ -89,24 +89,6 @@
         transform: translateZ(24px);
     }
 
-    .hero-3d__badge {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.75rem;
-    }
-
-    .hero-3d__badge span {
-        padding: 0.5rem 0.85rem;
-        border: 1px dashed rgb(var(--color-border-main) / 0.55);
-        border-radius: 9999px;
-        background: rgb(var(--color-bg-main) / 0.7);
-        font-size: 0.75rem;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-        backdrop-filter: blur(10px);
-        box-shadow: 0 16px 24px -24px rgb(0 0 0 / 0.8);
-    }
-
     .hero-3d__text {
         position: relative;
         z-index: 1;
@@ -239,9 +221,9 @@
         .home-3d-card,
         .home-3d-link,
         .home-3d-button {
-            animation: none !important;
-            transition: none !important;
-            transform: none !important;
+            animation: none;
+            transition: none;
+            transform: none;
         }
     }
 }
