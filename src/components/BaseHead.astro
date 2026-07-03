@@ -9,9 +9,23 @@ export type Props = {
     description?: string;
     image?: { src: string; alt?: string };
     pageType?: 'website' | 'article';
+    keywords?: string[];
+    noindex?: boolean;
+    publishedTime?: string;
+    modifiedTime?: string;
+    structuredData?: Record<string, unknown> | Array<Record<string, unknown>>;
 };
 
-const { description = '', image = siteConfig.image, pageType = 'website' } = Astro.props;
+const {
+    description = siteConfig.description,
+    image = siteConfig.image,
+    pageType = 'website',
+    keywords = siteConfig.keywords || [],
+    noindex = false,
+    publishedTime,
+    modifiedTime,
+    structuredData
+} = Astro.props;
 const title = [Astro.props.title, siteConfig.title].filter(Boolean).join(' | ');
 const resolvedImage = image?.src
     ? {
@@ -20,19 +34,22 @@ const resolvedImage = image?.src
       }
     : undefined;
 const canonicalURL = new URL(Astro.request.url, Astro.site);
+const structuredDataEntries = [structuredData].flat().filter(Boolean).map((entry) => JSON.stringify(entry).replace(/</g, '\\u003c'));
 
 /**
  * Enforce some standard canonical URL formatting across the site.
  */
 function formatCanonicalURL(url: string | URL) {
-    const path = url.toString();
-    const hasQueryParams = path.includes('?');
-    // If there are query params, make sure the URL has no trailing slash
-    if (hasQueryParams) {
-        path.replace(/\/?$/, '');
+    const canonical = new URL(url.toString());
+    canonical.hash = '';
+
+    if (canonical.search) {
+        canonical.pathname = canonical.pathname.replace(/\/+$/, '') || '/';
+    } else if (!canonical.pathname.endsWith('/')) {
+        canonical.pathname = `${canonical.pathname}/`;
     }
-    // otherwise, canonical URL always has a trailing slash
-    return path.replace(/\/?$/, hasQueryParams ? '' : '/');
+
+    return canonical.toString();
 }
 
 /**
@@ -63,14 +80,19 @@ const validGAId = validateGAId(siteConfig.googleAnalyticsId);
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="sitemap" href="/sitemap-index.xml" />
 <link rel="alternate" type="application/rss+xml" href="/rss.xml" title="RSS" />
+<meta name="author" content={siteConfig.author || siteConfig.title} />
+<meta name="theme-color" content="#f8f5ef" />
 
 <!-- Page Metadata -->
 <link rel="canonical" href={formatCanonicalURL(canonicalURL)} />
 <meta name="description" content={description} />
+{keywords.length > 0 && <meta name="keywords" content={keywords.join(', ')} />}
+<meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow'} />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content={pageType} />
 <meta property="og:url" content={formatCanonicalURL(canonicalURL)} />
+<meta property="og:site_name" content={siteConfig.title} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 {resolvedImage?.src && <meta property="og:image" content={resolvedImage.src} />}
@@ -81,8 +103,16 @@ const validGAId = validateGAId(siteConfig.googleAnalyticsId);
 <meta property="twitter:url" content={formatCanonicalURL(canonicalURL)} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
+{siteConfig.socialHandle && <meta name="twitter:creator" content={siteConfig.socialHandle} />}
 {resolvedImage?.src && <meta property="twitter:image" content={resolvedImage.src} />}
 {resolvedImage?.alt && <meta name="twitter:image:alt" content={resolvedImage?.alt} />}
+
+<!-- Article Metadata -->
+{publishedTime && <meta property="article:published_time" content={publishedTime} />}
+{modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
+
+<!-- Structured Data -->
+{structuredDataEntries.map((entry) => <script type="application/ld+json" set:html={entry}></script>)}
 
 <!-- Google Analytics -->
 {validGAId && (

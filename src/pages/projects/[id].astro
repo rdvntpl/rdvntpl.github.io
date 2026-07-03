@@ -1,5 +1,7 @@
 ---
 import { type CollectionEntry, getCollection, render } from 'astro:content';
+import Button from '../../components/Button.astro';
+import CallToAction from '../../components/CallToAction.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ProjectPreview from '../../components/ProjectPreview.astro';
 import { sortItemsByDateDesc } from '../../utils/data-utils';
@@ -17,22 +19,66 @@ export async function getStaticPaths() {
     }));
 }
 
-type Props = { project: CollectionEntry<'projects'>; prevProject: CollectionEntry<'projects'>; nextProject: CollectionEntry<'projects'> };
+type Props = {
+    project: CollectionEntry<'projects'>;
+    prevProject: CollectionEntry<'projects'> | null;
+    nextProject: CollectionEntry<'projects'> | null;
+};
 
 const { project, prevProject, nextProject } = Astro.props;
-const { title, description, seo } = project.data;
+const { title, description, summary, status, technologies = [], links = [], cta, seo } = project.data;
 const { Content } = await render(project);
+const pageDescription = seo?.description ?? summary ?? description;
+const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'CreativeWork',
+    name: seo?.title ?? title,
+    description: pageDescription,
+    url: Astro.url.href,
+    image: seo?.image?.src ? new URL(seo.image.src, Astro.site).toString() : undefined,
+    author: {
+        '@type': 'Person',
+        name: 'Rıdvan Topal'
+    }
+};
 ---
 
-<BaseLayout title={seo?.title ?? title} description={seo?.description ?? description} image={seo?.image} pageType="article" showHeader={false}>
+<BaseLayout
+    title={seo?.title ?? title}
+    description={pageDescription}
+    image={seo?.image}
+    pageType={seo?.pageType ?? 'article'}
+    keywords={seo?.keywords ?? technologies}
+    structuredData={seo?.structuredData ?? structuredData}
+    showHeader={false}
+>
     <article class="mb-16 sm:mb-24">
         <header class="mb-8">
             <h1 class="text-3xl leading-tight font-serif font-medium sm:text-5xl sm:leading-tight">{title}</h1>
+            {(summary || description) && <p class="mt-4 max-w-2xl text-sm leading-relaxed sm:text-base">{summary || description}</p>}
+            {(status || technologies.length > 0) && (
+                <div class="mt-5 flex flex-wrap gap-2">
+                    {status && <span class="rounded-full border border-dashed border-main px-2.5 py-1 text-xs uppercase tracking-[0.18em]">{status}</span>}
+                    {technologies.map((technology) => (
+                        <span class="rounded-full border border-dashed border-main px-2.5 py-1 text-xs">{technology}</span>
+                    ))}
+                </div>
+            )}
+            {links.length > 0 && (
+                <div class="mt-6 flex flex-wrap gap-4">
+                    {links.map((link) => (
+                        <Button href={link.href} target={link.external ? '_blank' : undefined} rel={link.external ? 'noopener noreferrer' : undefined}>
+                            {link.label}
+                        </Button>
+                    ))}
+                </div>
+            )}
         </header>
         <div class="max-w-none prose prose-dante sm:prose-lg">
             <Content />
         </div>
     </article>
+    <CallToAction cta={cta} class="mb-16 sm:mb-24" />
     {
         (prevProject || nextProject) && (
             <div class="my-16 sm:my-24">

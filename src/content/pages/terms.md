@@ -1,52 +1,43 @@
 ---
 title: Terms of Service
+summary: Basic terms governing the use of this portfolio website and the content published on it.
 seo:
   title: Terms of Service
-  description: Explore the terms and conditions of the website for a clear understanding of guidelines and responsibilities.
+  description: Review the terms that apply to using the Rıdvan Topal portfolio website and its published content.
 ---
 
-**Last updated on January 1, 2025**
+**Last updated on July 3, 2026**
 
-These Terms of Service ("Terms") govern your access to and use of **[Your Website Name]** ("the Website") and any related services provided by **[Your Company Name]** ("we," "us," or "our"). Please read these Terms carefully before using the Website.
+These Terms of Service ("Terms") govern your access to and use of the personal website operated by **Rıdvan Topal** ("the Website"). By using this Website, you agree to the terms below.
 
-**1. Acceptance of Terms**
+## 1. Website purpose
 
-By accessing or using the Website, you agree to be bound by these Terms and our Privacy Policy. If you do not agree to these Terms or the Privacy Policy, please do not use the Website.
+This Website exists to share portfolio work, writing, product context, and contact information. The content is provided for general informational purposes and professional communication.
 
-**2. Changes to Terms**
+## 2. Content ownership
 
-We reserve the right to modify, amend, or update these Terms at any time. Such changes will be effective upon posting on the Website. It is your responsibility to review these Terms regularly. Your continued use of the Website after any changes indicates your acceptance of the revised Terms.
+Unless otherwise stated, the text, images, project descriptions, and other original material on this Website are owned by Rıdvan Topal. You may reference or share publicly available pages with attribution, but you may not republish substantial portions of the content as your own.
 
-**3. Use of the Website**
+## 3. Acceptable use
 
-You agree to use the Website for lawful purposes and in a manner consistent with these Terms. You are responsible for any content you post or submit on the Website.
+You agree not to misuse the Website, attempt to disrupt its operation, or use any published contact information for spam, abuse, or unlawful activity.
 
-**4. Registration and Account**
+## 4. External links
 
-Certain areas of the Website may require registration or the creation of an account. You agree to provide accurate, current, and complete information during the registration process and to update such information to keep it accurate, current, and complete. You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account.
+Some pages may link to third-party websites, products, or services. Those destinations are provided for convenience only. Their content, policies, and availability are outside the control of this Website.
 
-**5. Content and Intellectual Property**
+## 5. No guarantees
 
-The content on the Website, including text, graphics, logos, images, audio, video, software, and other materials, is owned or licensed by us and is protected by copyright and other intellectual property laws. You may not use, reproduce, or distribute the content without our prior written consent.
+Project descriptions, writing, and technical notes are shared in good faith, but the Website is provided on an "as is" basis without warranties of any kind. Availability, accuracy, and completeness are not guaranteed.
 
-**6. Third-Party Links**
+## 6. Limitation of liability
 
-The Website may contain links to third-party websites or resources. We do not endorse and are not responsible for the content, products, or services provided by third parties. Your use of such websites is at your own risk.
+To the fullest extent permitted by applicable law, Rıdvan Topal is not liable for damages arising from your use of, or inability to use, this Website.
 
-**7. Termination**
+## 7. Changes to these terms
 
-We may, at our sole discretion, terminate or suspend your access to the Website at any time and for any reason, without notice.
+These Terms may be updated from time to time. Continued use of the Website after changes are published means you accept the revised Terms.
 
-**8. Disclaimer**
+## 8. Contact
 
-The Website and its content are provided on an "as is" and "as available" basis. We make no warranties or representations about the accuracy or completeness of the content. We do not guarantee that the Website will be error-free or uninterrupted.
-
-**9. Limitation of Liability**
-
-To the fullest extent permitted by law, we shall not be liable for any direct, indirect, incidental, special, consequential, or exemplary damages, including but not limited to damages for loss of profits, goodwill, use, data, or other intangible losses, arising out of or in connection with the use or inability to use the Website.
-
-**10. Governing Law**
-
-These Terms are governed by and construed in accordance with the laws of **[Your Jurisdiction]**, without regard to its conflict of laws principles. Any disputes arising under these Terms shall be subject to the exclusive jurisdiction of the courts of **[Your Jurisdiction]**.
-
-_Thank you for reading our Terms of Service. By using the Website, you agree to be bound by these Terms._
+If you have questions about these Terms, contact [rdvn.tpl@gmail.com](mailto:rdvn.tpl@gmail.com).
