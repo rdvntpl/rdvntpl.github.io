@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LastTheWord — A Word-Chain Game</title>
+    <meta name="description" content="Every word must begin with the letter the last one ended on. LastTheWord is a fast, offline word-chain game with Endless and Blitz modes.">
+    <style>
+        :root {
+            --bg-color: #0b0d12;
+            --card-bg: #141721;
+            --text-main: #e2e8f0;
+            --text-muted: #94a3b8;
+            --accent-color: #38bdf8;
+            --accent-color-2: #a78bfa;
+            --border-color: #1e293b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 40px 20px 80px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .hero {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 48px 40px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .eyebrow {
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #ffffff;
+            margin-top: 12px;
+        }
+
+        .tagline {
+            margin-top: 16px;
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            max-width: 560px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .chain {
+            margin-top: 24px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-main);
+            word-spacing: 4px;
+        }
+
+        .chain span {
+            color: var(--accent-color-2);
+        }
+
+        .cta-row {
+            margin-top: 32px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: #0b0d12;
+        }
+
+        .btn-primary:hover {
+            background-color: #7dd3fc;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        section.card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 32px 36px;
+            margin-top: 24px;
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            color: #ffffff;
+            margin-bottom: 12px;
+            border-left: 3px solid var(--accent-color);
+            padding-left: 10px;
+        }
+
+        p {
+            color: var(--text-main);
+            margin-bottom: 12px;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        .modes {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 8px;
+        }
+
+        .mode {
+            background-color: rgba(56, 189, 248, 0.05);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .mode h3 {
+            font-size: 1.05rem;
+            color: var(--accent-color);
+            margin-bottom: 8px;
+        }
+
+        .mode p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 0;
+        }
+
+        footer {
+            margin-top: 32px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 16px 8px 60px;
+            }
+            .hero {
+                padding: 32px 20px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            section.card {
+                padding: 24px 20px;
+            }
+            .modes {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="hero">
+        <p class="eyebrow">Word-Chain Game</p>
+        <h1>LastTheWord</h1>
+        <p class="tagline">
+            Every word must begin with the letter the last one ended on. That is the whole rule, and it is the last simple thing about it.
+        </p>
+        <p class="chain">apple <span>&rarr;</span> elephant <span>&rarr;</span> train <span>&rarr;</span> nest</p>
+        <div class="cta-row">
+            <a class="btn btn-primary" href="#">Get it on the App Store</a>
+            <a class="btn btn-secondary" href="/lasttheword/privacy_policy">Privacy Policy</a>
+        </div>
+    </div>
+
+    <section class="card">
+        <h2>How it works</h2>
+        <p>
+            The clock is running. A longer word scores more. A rarer word scores more still. A streak multiplies everything —
+            and every word you get right shaves a little more time off the next turn, so a good run gets harder precisely
+            because it is going well.
+        </p>
+    </section>
+
+    <section class="card">
+        <h2>Two ways to play</h2>
+        <div class="modes">
+            <div class="mode">
+                <h3>Endless</h3>
+                <p>Three lives, and a per-turn clock that tightens as you go. See how far your streak can carry you.</p>
+            </div>
+            <div class="mode">
+                <h3>Blitz</h3>
+                <p>One 60-second clock for the whole run. Every valid word buys more of it. Fast, tense, and over in a minute.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>LastTheWord by <a href="/">Rıdvan Topal</a> · <a href="/lasttheword/privacy_policy">Privacy Policy</a></p>
+    </footer>
+</div>
+</body>
+</html>
