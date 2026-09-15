@@ -3,175 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - LastTheWord</title>
+    <title>Privacy Policy | LastTheWord</title>
+    <meta name="description" content="Privacy policy for the LastTheWord mobile app.">
     <style>
-        :root {
-            --bg-color: #0b0d12;
-            --card-bg: #141721;
-            --text-main: #e2e8f0;
-            --text-muted: #94a3b8;
-            --accent-color: #38bdf8;
-            --border-color: #1e293b;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
-            padding: 40px 20px;
-            display: flex;
-            justify-content: center;
-        }
-
-        .container {
-            max-width: 800px;
-            width: 100%;
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 40px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-        }
-
-        header {
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 20px;
-            margin-bottom: 30px;
-        }
-
-        h1 {
-            font-size: 2rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            color: #ffffff;
-            margin-bottom: 8px;
-        }
-
-        .last-updated {
-            font-size: 0.875rem;
-            color: var(--text-muted);
-        }
-
-        h2 {
-            font-size: 1.25rem;
-            color: #ffffff;
-            margin-top: 28px;
-            margin-bottom: 12px;
-            border-left: 3px solid var(--accent-color);
-            padding-left: 10px;
-        }
-
-        p {
-            margin-bottom: 16px;
-            color: var(--text-main);
-        }
-
-        ul {
-            margin-bottom: 16px;
-            padding-left: 20px;
-        }
-
-        li {
-            margin-bottom: 8px;
-        }
-
-        a {
-            color: var(--accent-color);
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        .contact-box {
-            background-color: rgba(56, 189, 248, 0.05);
-            border: 1px solid rgba(56, 189, 248, 0.2);
-            border-radius: 8px;
-            padding: 20px;
-            margin-top: 20px;
-        }
-
-        .contact-box p {
-            margin-bottom: 8px;
-        }
-
-        .contact-box p:last-child {
-            margin-bottom: 0;
-        }
-
-        @media (max-width: 600px) {
-            body {
-                padding: 16px 8px;
-            }
-            .container {
-                padding: 24px 16px;
-            }
-            h1 {
-                font-size: 1.5rem;
-            }
-        }
+        :root { --bg: #0a0f14; --panel: #111820; --line: #1e2a36; --text: #e8eef4; --dim: #8fa3b5; --green: #5fd38d; --blue: #6fb4e8; }
+        * { box-sizing: border-box; }
+        body { margin: 0; padding: 32px 20px 72px; background: var(--bg); color: var(--text); font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        main { max-width: 800px; margin: 0 auto; }
+        nav { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-bottom: 40px; }
+        .brand { color: var(--green); font-size: 1.05rem; font-weight: 700; letter-spacing: .08em; text-decoration: none; }
+        .nav-links { display: flex; gap: 18px; font-size: .875rem; }
+        .nav-links a { color: var(--dim); text-decoration: none; }
+        .nav-links a:hover, a { color: var(--green); }
+        article { padding: 40px; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; }
+        header { margin-bottom: 32px; padding-bottom: 22px; border-bottom: 1px solid var(--line); }
+        h1 { margin: 0 0 6px; color: #fff; font-size: 2rem; letter-spacing: .03em; }
+        .updated { margin: 0; color: var(--dim); font-size: .875rem; }
+        h2 { margin: 30px 0 12px; padding-left: 10px; border-left: 3px solid var(--blue); color: #fff; font-size: 1.15rem; }
+        p, ul { margin: 0 0 16px; }
+        li { margin-bottom: 8px; }
+        a { text-decoration: none; } a:hover { text-decoration: underline; }
+        .contact { margin-top: 20px; padding: 20px; background: rgba(95, 211, 141, .05); border: 1px solid rgba(95, 211, 141, .2); border-radius: 10px; }
+        .contact p { margin-bottom: 6px; } .contact p:last-child { margin-bottom: 0; }
+        footer { margin-top: 36px; color: var(--dim); font-size: .85rem; text-align: center; }
+        @media (max-width: 600px) { body { padding: 20px 12px 48px; } article { padding: 28px 20px; } h1 { font-size: 1.6rem; } }
     </style>
 </head>
 <body>
-
-<div class="container">
-    <header>
-        <h1>Privacy Policy for LastTheWord</h1>
-        <p class="last-updated">Last updated: September 9, 2026</p>
-    </header>
-
-    <p>This Privacy Policy applies to the <strong>LastTheWord</strong> mobile application (the "Application"), created by <strong>Rıdvan Topal</strong> ("we," "us," or "our").</p>
-
-    <p>We built LastTheWord with privacy and performance in mind. Core gameplay relies on a fully offline dictionary, meaning your word lookups, typing inputs, and game progress are processed locally on your device and are never transmitted to our servers.</p>
-
-    <h2>1. Local Data Processing</h2>
-    <ul>
-        <li><strong>Offline Dictionary & Gameplay:</strong> All word validation, scoring, turn logic, and dictionary lookups occur entirely on your device. We do not transmit, log, or collect the words you type.</li>
-        <li><strong>Local Storage:</strong> Your game settings, high scores, and gameplay statistics are saved locally on your device using standard iOS system storage.</li>
-    </ul>
-
-    <h2>2. Third-Party Services & Advertising (Google AdMob)</h2>
-    <p>To support the Application, we integrate <strong>Google AdMob</strong> to display advertisements. While core gameplay runs completely offline, Google AdMob requires a network connection to serve ads and may collect device diagnostics and ad-related data.</p>
-
-    <p>Depending on your choices regarding Apple's <strong>App Tracking Transparency (ATT)</strong> prompt, data collected by Google AdMob may include:</p>
-    <ul>
-        <li><strong>Identifiers:</strong> Device Identifier for Advertisers (IDFA, if permitted), Identifier for Vendors (IDFV), or other advertising IDs.</li>
-        <li><strong>Usage Data:</strong> Interactions with ads shown within LastTheWord (such as ad impressions and taps).</li>
-        <li><strong>Diagnostics:</strong> Technical performance metrics, load times, and crash reports related to ad delivery.</li>
-        <li><strong>Location Data:</strong> Approximate location derived from your device's IP address.</li>
-    </ul>
-    <p>For more details on how Google handles collected data, please visit <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a> and <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">Google's Advertising Terms & Privacy</a>.</p>
-
-    <h2>3. App Tracking Transparency (ATT) & Choice</h2>
-    <p>When you launch LastTheWord, you will see Apple's <strong>App Tracking Transparency (ATT)</strong> permission prompt asking if you allow LastTheWord to track your activity across other companies' apps and websites.</p>
-    <ul>
-        <li><strong>If you select "Allow":</strong> Google AdMob uses your device IDFA to show personalized advertisements tailored to your interests.</li>
-        <li><strong>If you select "Ask App Not to Track" (or refuse):</strong> We do not access your IDFA. You will still see ads, but they will be contextual/non-personalized rather than based on your browsing behavior.</li>
-    </ul>
-    <p>You can update or revoke your choice at any time in your iOS settings under <strong>Settings &gt; Privacy &amp; Security &gt; Tracking</strong>.</p>
-
-    <h2>4. Children's Privacy</h2>
-    <p>LastTheWord does not knowingly collect personal information from children under the age of 13 (or 16 in certain jurisdictions). If you are a parent or guardian and believe third-party ad services have collected information from your child without consent, please contact us immediately so we can assist.</p>
-
-    <h2>5. Changes to This Privacy Policy</h2>
-    <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated "Last updated" date.</p>
-
-    <h2>6. Contact Us</h2>
-    <p>If you have questions or feedback regarding this Privacy Policy, please reach out:</p>
-
-    <div class="contact-box">
-        <p><strong>Email:</strong> <a href="mailto:rdvn.tpl@gmail.com">rdvn.tpl@gmail.com</a></p>
-        <p><strong>Website:</strong> <a href="https://rdvntpl.github.io/lasttheword/">https://rdvntpl.github.io/lasttheword/</a></p>
-    </div>
-</div>
-
+<main>
+    <nav aria-label="LastTheWord navigation">
+        <a class="brand" href="/lasttheword/">LASTTHEWORD</a>
+        <div class="nav-links"><a href="/lasttheword/support/">Support</a><a href="/lasttheword/privacy_policy/">Privacy</a></div>
+    </nav>
+    <article>
+        <header><h1>Privacy Policy</h1><p class="updated">Last updated: September 9, 2026</p></header>
+        <p>This Privacy Policy applies to the <strong>LastTheWord</strong> mobile application (the "Application"), created by <strong>Rıdvan Topal</strong> ("we," "us," or "our").</p>
+        <p>We built LastTheWord with privacy and performance in mind. Core gameplay relies on a fully offline dictionary, meaning your word lookups, typing inputs, and game progress are processed locally on your device and are never transmitted to our servers.</p>
+        <h2>1. Local Data Processing</h2>
+        <ul><li><strong>Offline Dictionary & Gameplay:</strong> All word validation, scoring, turn logic, and dictionary lookups occur entirely on your device. We do not transmit, log, or collect the words you type.</li><li><strong>Local Storage:</strong> Your game settings, high scores, and gameplay statistics are saved locally on your device using standard iOS system storage.</li></ul>
+        <h2>2. Third-Party Services & Advertising (Google AdMob)</h2>
+        <p>To support the Application, we integrate <strong>Google AdMob</strong> to display advertisements. While core gameplay runs completely offline, Google AdMob requires a network connection to serve ads and may collect device diagnostics and ad-related data.</p>
+        <p>Depending on your choices regarding Apple's <strong>App Tracking Transparency (ATT)</strong> prompt, data collected by Google AdMob may include:</p>
+        <ul><li><strong>Identifiers:</strong> Device Identifier for Advertisers (IDFA, if permitted), Identifier for Vendors (IDFV), or other advertising IDs.</li><li><strong>Usage Data:</strong> Interactions with ads shown within LastTheWord (such as ad impressions and taps).</li><li><strong>Diagnostics:</strong> Technical performance metrics, load times, and crash reports related to ad delivery.</li><li><strong>Location Data:</strong> Approximate location derived from your device's IP address.</li></ul>
+        <p>For more details on how Google handles collected data, please visit <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a> and <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">Google's Advertising Terms & Privacy</a>.</p>
+        <h2>3. App Tracking Transparency (ATT) & Choice</h2>
+        <p>When you launch LastTheWord, you will see Apple's <strong>App Tracking Transparency (ATT)</strong> permission prompt asking if you allow LastTheWord to track your activity across other companies' apps and websites.</p>
+        <ul><li><strong>If you select "Allow":</strong> Google AdMob uses your device IDFA to show personalized advertisements tailored to your interests.</li><li><strong>If you select "Ask App Not to Track" (or refuse):</strong> We do not access your IDFA. You will still see ads, but they will be contextual/non-personalized rather than based on your browsing behavior.</li></ul>
+        <p>You can update or revoke your choice at any time in your iOS settings under <strong>Settings &gt; Privacy &amp; Security &gt; Tracking</strong>.</p>
+        <h2>4. Children's Privacy</h2>
+        <p>LastTheWord does not knowingly collect personal information from children under the age of 13 (or 16 in certain jurisdictions). If you are a parent or guardian and believe third-party ad services have collected information from your child without consent, please contact us immediately so we can assist.</p>
+        <h2>5. Changes to This Privacy Policy</h2>
+        <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated "Last updated" date.</p>
+        <h2>6. Contact Us</h2>
+        <p>If you have questions or feedback regarding this Privacy Policy, please reach out:</p>
+        <div class="contact"><p><strong>Email:</strong> <a href="mailto:rdvn.tpl@gmail.com">rdvn.tpl@gmail.com</a></p><p><strong>Website:</strong> <a href="https://rdvntpl.github.io/lasttheword/">rdvntpl.github.io/lasttheword</a></p></div>
+    </article>
+    <footer>LastTheWord by Rıdvan Topal · <a href="/lasttheword/">Home</a> · <a href="/lasttheword/support/">Support</a></footer>
+</main>
 </body>
 </html>
